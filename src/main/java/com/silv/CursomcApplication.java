@@ -1,5 +1,6 @@
 package com.silv;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,8 +9,12 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.silv.domain.Categoria;
+import com.silv.domain.Cidade;
+import com.silv.domain.Estado;
 import com.silv.domain.Produto;
 import com.silv.repositories.CategoriaRepository;
+import com.silv.repositories.CidadeRepository;
+import com.silv.repositories.EstadoRepository;
 import com.silv.repositories.ProdutoRepository;
 
 @SpringBootApplication
@@ -19,6 +24,10 @@ public class CursomcApplication implements CommandLineRunner {
 	CategoriaRepository categoriaRepository;
 	@Autowired
 	ProdutoRepository produtoRepository;
+	@Autowired
+	CidadeRepository cidadeRepository;
+	@Autowired
+	EstadoRepository estadoRepository;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(CursomcApplication.class, args);
@@ -47,5 +56,21 @@ public class CursomcApplication implements CommandLineRunner {
 		categoriaRepository.save(Arrays.asList(cat1, cat2));
 		
 		produtoRepository.save(Arrays.asList(p1,p2,p3));
+		
+		Estado est1 = new Estado(null, "Minas Gerais");
+		Estado est2 = new Estado(null, "São Paulo");
+		
+		Cidade cid1 = new Cidade(null,"Uberlândia", est1);
+		Cidade cid2 = new Cidade(null,"São Paulo", est2);
+		Cidade cid3 = new Cidade(null,"Campinas", est2);
+		
+		est1.addCidade(cid1);
+		est2.addCidade(cid2);
+		est2.addCidade(cid3);
+		
+		estadoRepository.save(Arrays.asList(est1, est2));
+		cidadeRepository.save(Arrays.asList(cid1, cid2, cid3));
+		
+		
 	}
 }
