@@ -16,6 +16,7 @@ import javax.persistence.OneToMany;
 
 import com.silv.domain.enums.TipoCliente;
 
+
 @Entity
 public class Cliente implements Serializable {
 
@@ -102,6 +103,13 @@ public class Cliente implements Serializable {
 
 	public Integer getId() {
 		return id;
+	}
+	
+	public void addTelefone(String telefone) {
+		if(telefone != null)
+			this.telefones.add(telefone);
+		else
+			throw new IllegalArgumentException();
 	}
 
 	@Override

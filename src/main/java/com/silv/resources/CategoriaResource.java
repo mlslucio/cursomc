@@ -11,7 +11,6 @@ import com.silv.domain.Categoria;
 import com.silv.services.CategoriaService;
 
 @RestController
-
 @RequestMapping(value="/categorias")
 public class CategoriaResource {
 	
