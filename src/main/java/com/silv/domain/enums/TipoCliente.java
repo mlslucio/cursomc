@@ -23,16 +23,18 @@ public enum TipoCliente {
 	
 	public static TipoCliente toEnum(Integer id) {
 		
+		System.out.println("id" + id);
+		
 		if(id == null)
 			return null;
 		
 		for (TipoCliente x : TipoCliente.values()) {
 			
-			if(x.equals(id))
+			if(id.equals(x.getId()))
 				return x;
 		}
 		
-		throw new IllegalArgumentException("Id Inválaido: "+id);
+		throw new IllegalArgumentException("Id Inválido: "+id);
 	}
 	
 }

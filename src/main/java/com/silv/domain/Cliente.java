@@ -14,6 +14,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.silv.domain.enums.TipoCliente;
 
 
@@ -84,7 +85,8 @@ public class Cliente implements Serializable {
 	public void setTipo(TipoCliente tipo) {
 		TipoCliente.toEnum(id);
 	}
-
+	
+	@JsonManagedReference
 	public List<Endereco> getEnderecos() {
 		return enderecos;
 	}
