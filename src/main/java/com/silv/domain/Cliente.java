@@ -17,7 +17,6 @@ import javax.persistence.OneToMany;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.silv.domain.enums.TipoCliente;
 
-
 @Entity
 public class Cliente implements Serializable {
 
@@ -37,10 +36,12 @@ public class Cliente implements Serializable {
 
 	@OneToMany(mappedBy = "cliente")
 	private List<Endereco> enderecos = new ArrayList<>();
-	
+
 	@ElementCollection
-	@CollectionTable(name="telefone")
+	@CollectionTable(name = "telefone")
 	private Set<String> telefones = new HashSet<>();
+
+	private List<Pedido> pedidos = new ArrayList<>();
 
 	public Cliente(Integer id, String nome, String email, String cpf, TipoCliente tipo) {
 		super();
@@ -85,7 +86,7 @@ public class Cliente implements Serializable {
 	public void setTipo(TipoCliente tipo) {
 		TipoCliente.toEnum(id);
 	}
-	
+
 	@JsonManagedReference
 	public List<Endereco> getEnderecos() {
 		return enderecos;
@@ -106,9 +107,17 @@ public class Cliente implements Serializable {
 	public Integer getId() {
 		return id;
 	}
-	
+
+	public List<Pedido> getPedidos() {
+		return pedidos;
+	}
+
+	public void setPedidos(List<Pedido> pedidos) {
+		this.pedidos = pedidos;
+	}
+
 	public void addTelefone(String telefone) {
-		if(telefone != null)
+		if (telefone != null)
 			this.telefones.add(telefone);
 		else
 			throw new IllegalArgumentException();

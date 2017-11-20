@@ -23,8 +23,6 @@ public enum TipoCliente {
 	
 	public static TipoCliente toEnum(Integer id) {
 		
-		System.out.println("id" + id);
-		
 		if(id == null)
 			return null;
 		
