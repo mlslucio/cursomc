@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
@@ -11,7 +13,8 @@ import javax.persistence.OneToOne;
 import com.silv.domain.enums.EstadoPagamento;
 
 @Entity
-public class Pagamento implements Serializable {
+@Inheritance(strategy=InheritanceType.JOINED)
+public abstract class Pagamento implements Serializable {
 
 	/**
 	 * 
@@ -20,7 +23,7 @@ public class Pagamento implements Serializable {
 	
 	@Id
 	private Integer id;
-	private EstadoPagamento estado;
+	private Integer estado;
 	
 	@OneToOne
 	@JoinColumn(name="pedido_id")
@@ -37,16 +40,16 @@ public class Pagamento implements Serializable {
 
 	public Pagamento(EstadoPagamento estado, Pedido pedido) {
 		super();
-		this.estado = estado;
+		this.estado = estado.getId();
 		this.pedido = pedido;
 	}
 
 	public EstadoPagamento getEstado() {
-		return estado;
+		return EstadoPagamento.toEnum(estado);
 	}
 
 	public void setEstado(EstadoPagamento estado) {
-		this.estado = estado;
+		this.estado = estado.getId();
 	}
 
 	public Pedido getPedido() {
