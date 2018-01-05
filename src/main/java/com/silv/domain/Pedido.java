@@ -16,7 +16,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 public class Pedido implements Serializable {
@@ -56,8 +55,22 @@ public class Pedido implements Serializable {
 	@OneToMany(mappedBy="itemPedidoPK.pedido")
 	private Set<ItemPedido> items = new HashSet<>();
 
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
 	public Date getInstante() {
 		return instante;
+	}
+	
+	public double getValorTotal() {
+		double total = 0;
+		
+		for (ItemPedido itemPedido : items) {
+			total += itemPedido.getSubTotal();
+		}
+		
+		return total;
 	}
 
 	public void setInstante(Date instante) {

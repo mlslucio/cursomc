@@ -11,4 +11,6 @@ import com.silv.domain.Cliente;
 public interface ClienteRepository extends JpaRepository<Cliente, Integer>  {
 	
 	Cliente findByEmail(String email);
+	
+	Cliente findByCpf(String cpf);
 }
