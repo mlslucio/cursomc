@@ -3,7 +3,6 @@ CREATE TABLE `categoria` (
   `nome` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
 -- Extraindo dados da tabela `categoria`
 --
 INSERT INTO `categoria` (`id`, `nome`) VALUES
