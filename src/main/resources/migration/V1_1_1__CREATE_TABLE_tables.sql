@@ -1,7 +1,6 @@
-CREATE TABLE `categoria` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nome` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+CREATE TABLE public.categoria
+(
+    id integer NOT NULL DEFAULT nextval('categoria_id_seq'::regclass),
+    nome character varying(255) COLLATE pg_catalog."default",
+    CONSTRAINT categoria_pkey PRIMARY KEY (id)
 )
-
-
