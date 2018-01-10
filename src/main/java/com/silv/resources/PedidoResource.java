@@ -14,9 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.silv.domain.Categoria;
 import com.silv.domain.Pedido;
-import com.silv.dto.CategoriaDTO;
 import com.silv.services.PedidoService;
 
 @RestController

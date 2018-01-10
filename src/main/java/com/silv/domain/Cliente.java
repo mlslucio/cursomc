@@ -96,7 +96,6 @@ public class Cliente implements Serializable {
 		TipoCliente.toEnum(id);
 	}
 
-	@JsonManagedReference
 	public List<Endereco> getEnderecos() {
 		return enderecos;
 	}

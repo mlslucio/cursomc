@@ -37,12 +37,7 @@ public class ClienteInsertValidator implements ConstraintValidator<ClienteInsert
 		if(cliente != null)
 			list.add(new FieldMessage("cpf","cpf já existe"));
 		
-			
-		for (FieldMessage e : list) {
-			context.disableDefaultConstraintViolation();
-			context.buildConstraintViolationWithTemplate(e.getMessage()).addPropertyNode(e.getError())
-					.addConstraintViolation();
-		}
+		
 		return list.isEmpty();
 	}
 }
