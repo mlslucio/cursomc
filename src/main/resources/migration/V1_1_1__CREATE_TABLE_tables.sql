@@ -543,6 +543,7 @@ ALTER TABLE `produto_categoria`
 
 --
 -- Limitadores para a tabela `telefone`
+
 --
 ALTER TABLE `telefone`
   ADD CONSTRAINT `FK8aafha0njkoyoe3kvrwsy3g8u` FOREIGN KEY (`cliente_id`) REFERENCES `cliente` (`id`);
