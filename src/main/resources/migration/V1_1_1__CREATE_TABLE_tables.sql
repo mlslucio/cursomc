@@ -1,3 +1,24 @@
+-- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
+--
+-- Host: 127.0.0.1    Database: curso_spring
+-- ------------------------------------------------------
+-- Server version 5.5.5-10.1.9-MariaDB
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `categoria`
+--
+
 DROP TABLE IF EXISTS `categoria`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
@@ -7,16 +28,6 @@ CREATE TABLE `categoria` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `categoria`
---
-
-LOCK TABLES `categoria` WRITE;
-/*!40000 ALTER TABLE `categoria` DISABLE KEYS */;
-INSERT INTO `categoria` VALUES (1,'Informática'),(2,'Escritório'),(3,'Jardinagem'),(4,'Pesca'),(5,'Cama, mesa e banho'),(6,'Alimentação'),(7,'Informática'),(8,'Escritório'),(9,'Jardinagem'),(10,'Pesca'),(11,'Cama, mesa e banho'),(12,'Alimentação'),(13,'Informática'),(14,'Escritório'),(15,'Jardinagem'),(16,'Pesca'),(17,'Cama, mesa e banho'),(18,'Alimentação'),(19,'Informática'),(20,'Escritório'),(21,'Jardinagem'),(22,'Pesca'),(23,'Cama, mesa e banho'),(24,'Alimentação');
-/*!40000 ALTER TABLE `categoria` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `cidade`
@@ -36,16 +47,6 @@ CREATE TABLE `cidade` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `cidade`
---
-
-LOCK TABLES `cidade` WRITE;
-/*!40000 ALTER TABLE `cidade` DISABLE KEYS */;
-INSERT INTO `cidade` VALUES (1,'Uberlândia',1),(2,'São Paulo',2),(3,'Campinas',2),(4,'Uberlândia',3),(5,'São Paulo',4),(6,'Campinas',4),(7,'Uberlândia',5),(8,'São Paulo',6),(9,'Campinas',6),(10,'Uberlândia',7),(11,'São Paulo',8),(12,'Campinas',8);
-/*!40000 ALTER TABLE `cidade` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `cliente`
 --
 
@@ -61,16 +62,6 @@ CREATE TABLE `cliente` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `cliente`
---
-
-LOCK TABLES `cliente` WRITE;
-/*!40000 ALTER TABLE `cliente` DISABLE KEYS */;
-INSERT INTO `cliente` VALUES (1,'123123123','maria@gmail.com','Maria Silva',1),(2,'123123123','maria@gmail.com','Maria Silva',1),(3,'123123123','maria@gmail.com','Maria Silva',1),(4,'123123123','maria@gmail.com','Maria Silva',1);
-/*!40000 ALTER TABLE `cliente` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `endereco`
@@ -97,16 +88,6 @@ CREATE TABLE `endereco` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `endereco`
---
-
-LOCK TABLES `endereco` WRITE;
-/*!40000 ALTER TABLE `endereco` DISABLE KEYS */;
-INSERT INTO `endereco` VALUES (1,'jardim','123123','apto 303','Rua flores','304',1,1),(2,'foresta','2342432','casa','Rua arvores','453',2,1),(3,'jardim','123123','apto 303','Rua flores','304',4,2),(4,'foresta','2342432','casa','Rua arvores','453',5,2),(5,'jardim','123123','apto 303','Rua flores','304',7,3),(6,'foresta','2342432','casa','Rua arvores','453',8,3),(7,'jardim','123123','apto 303','Rua flores','304',10,4),(8,'foresta','2342432','casa','Rua arvores','453',11,4);
-/*!40000 ALTER TABLE `endereco` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `estado`
 --
 
@@ -119,16 +100,6 @@ CREATE TABLE `estado` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `estado`
---
-
-LOCK TABLES `estado` WRITE;
-/*!40000 ALTER TABLE `estado` DISABLE KEYS */;
-INSERT INTO `estado` VALUES (1,'Minas Gerais'),(2,'São Paulo'),(3,'Minas Gerais'),(4,'São Paulo'),(5,'Minas Gerais'),(6,'São Paulo'),(7,'Minas Gerais'),(8,'São Paulo');
-/*!40000 ALTER TABLE `estado` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `item_pedido`
@@ -151,16 +122,6 @@ CREATE TABLE `item_pedido` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `item_pedido`
---
-
-LOCK TABLES `item_pedido` WRITE;
-/*!40000 ALTER TABLE `item_pedido` DISABLE KEYS */;
-INSERT INTO `item_pedido` VALUES (0,2000,1,1,1),(0,80,2,1,3),(100,800,1,2,2),(0,2000,1,3,4),(0,80,2,3,6),(100,800,1,4,5),(0,2000,1,5,7),(0,80,2,5,9),(100,800,1,6,8),(0,2000,1,7,10),(0,80,2,7,12),(100,800,1,8,11);
-/*!40000 ALTER TABLE `item_pedido` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `pagamento`
 --
 
@@ -174,16 +135,6 @@ CREATE TABLE `pagamento` (
   CONSTRAINT `FKthad9tkw4188hb3qo1lm5ueb0` FOREIGN KEY (`pedido_id`) REFERENCES `pedido` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `pagamento`
---
-
-LOCK TABLES `pagamento` WRITE;
-/*!40000 ALTER TABLE `pagamento` DISABLE KEYS */;
-INSERT INTO `pagamento` VALUES (1,2),(2,1),(3,2),(4,1),(5,2),(6,1),(7,2),(8,1);
-/*!40000 ALTER TABLE `pagamento` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `pagamento_com_boleto`
@@ -202,16 +153,6 @@ CREATE TABLE `pagamento_com_boleto` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `pagamento_com_boleto`
---
-
-LOCK TABLES `pagamento_com_boleto` WRITE;
-/*!40000 ALTER TABLE `pagamento_com_boleto` DISABLE KEYS */;
-INSERT INTO `pagamento_com_boleto` VALUES (NULL,'2017-10-20 00:00:00',2),(NULL,'2017-10-20 00:00:00',4),(NULL,'2017-10-20 00:00:00',6),(NULL,'2017-10-20 00:00:00',8);
-/*!40000 ALTER TABLE `pagamento_com_boleto` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `pagamento_com_cartao`
 --
 
@@ -225,16 +166,6 @@ CREATE TABLE `pagamento_com_cartao` (
   CONSTRAINT `FKta3cdnuuxclwfh52t4qi432ow` FOREIGN KEY (`pedido_id`) REFERENCES `pagamento` (`pedido_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `pagamento_com_cartao`
---
-
-LOCK TABLES `pagamento_com_cartao` WRITE;
-/*!40000 ALTER TABLE `pagamento_com_cartao` DISABLE KEYS */;
-INSERT INTO `pagamento_com_cartao` VALUES (6,1),(6,3),(6,5),(6,7);
-/*!40000 ALTER TABLE `pagamento_com_cartao` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `pedido`
@@ -257,16 +188,6 @@ CREATE TABLE `pedido` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `pedido`
---
-
-LOCK TABLES `pedido` WRITE;
-/*!40000 ALTER TABLE `pedido` DISABLE KEYS */;
-INSERT INTO `pedido` VALUES (1,'2017-09-30 22:32:00',1,1),(2,'2017-09-30 22:32:00',1,2),(3,'2017-09-30 22:32:00',2,3),(4,'2017-09-30 22:32:00',2,4),(5,'2017-09-30 22:32:00',3,5),(6,'2017-09-30 22:32:00',3,6),(7,'2017-09-30 22:32:00',4,7),(8,'2017-09-30 22:32:00',4,8);
-/*!40000 ALTER TABLE `pedido` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `produto`
 --
 
@@ -280,16 +201,6 @@ CREATE TABLE `produto` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `produto`
---
-
-LOCK TABLES `produto` WRITE;
-/*!40000 ALTER TABLE `produto` DISABLE KEYS */;
-INSERT INTO `produto` VALUES (1,'Computador',3000),(2,'Impressora',800),(3,'Mouse',80),(4,'Computador',3000),(5,'Impressora',800),(6,'Mouse',80),(7,'Computador',3000),(8,'Impressora',800),(9,'Mouse',80),(10,'Computador',3000),(11,'Impressora',800),(12,'Mouse',80);
-/*!40000 ALTER TABLE `produto` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `produto_categoria`
@@ -309,16 +220,6 @@ CREATE TABLE `produto_categoria` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `produto_categoria`
---
-
-LOCK TABLES `produto_categoria` WRITE;
-/*!40000 ALTER TABLE `produto_categoria` DISABLE KEYS */;
-INSERT INTO `produto_categoria` VALUES (1,1),(2,1),(2,2),(3,1),(4,7),(5,7),(5,8),(6,7),(7,13),(8,13),(8,14),(9,13),(10,19),(11,19),(11,20),(12,19);
-/*!40000 ALTER TABLE `produto_categoria` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `telefone`
 --
 
@@ -332,16 +233,6 @@ CREATE TABLE `telefone` (
   CONSTRAINT `FK8aafha0njkoyoe3kvrwsy3g8u` FOREIGN KEY (`cliente_id`) REFERENCES `cliente` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `telefone`
---
-
-LOCK TABLES `telefone` WRITE;
-/*!40000 ALTER TABLE `telefone` DISABLE KEYS */;
-INSERT INTO `telefone` VALUES (1,'31 12435422323'),(1,'31 12312323'),(2,'31 12435422323'),(2,'31 12312323'),(3,'31 12435422323'),(3,'31 12312323'),(4,'31 12435422323'),(4,'31 12312323');
-/*!40000 ALTER TABLE `telefone` ENABLE KEYS */;
-UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -352,4 +243,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-01-10 16:47:58
+-- Dump completed on 2018-01-10 16:50:43
