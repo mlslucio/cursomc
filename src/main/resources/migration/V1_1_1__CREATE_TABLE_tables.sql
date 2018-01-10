@@ -3,3 +3,5 @@ CREATE TABLE `categoria` (
   `nome` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 )
+
+
