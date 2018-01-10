@@ -100,6 +100,7 @@ CREATE TABLE telefone (
     telefones character varying(255)
 );
 
+
 ALTER TABLE ONLY produto_categoria
     ADD CONSTRAINT fk1c0y58d3n6x3m6euv2j3h64vt FOREIGN KEY (produto_id) REFERENCES produto(id);
 
