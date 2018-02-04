@@ -18,7 +18,7 @@ public class DevConfig {
 	
 	@Bean
 	public boolean runDb() throws ParseException {
-		dbService.runDev();
+		//dbService.runDev();
 		return true;
 	}
 }
